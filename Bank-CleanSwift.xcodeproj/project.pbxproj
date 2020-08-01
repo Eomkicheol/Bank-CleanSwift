@@ -244,6 +244,7 @@
 				FF3CDD5F24D4FF1700C5F8D4 /* Sources */,
 				FF3CDD6024D4FF1700C5F8D4 /* Frameworks */,
 				FF3CDD6124D4FF1700C5F8D4 /* Resources */,
+				7814A3CE020B7E9B90B86F13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -282,6 +283,7 @@
 				FF3CDD8024D4FF1A00C5F8D4 /* Sources */,
 				FF3CDD8124D4FF1A00C5F8D4 /* Frameworks */,
 				FF3CDD8224D4FF1A00C5F8D4 /* Resources */,
+				6E7EA8912F205AF90800C458 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -408,6 +410,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E7EA8912F205AF90800C458 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bank-CleanSwift-Bank-CleanSwiftUITests/Pods-Bank-CleanSwift-Bank-CleanSwiftUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bank-CleanSwift-Bank-CleanSwiftUITests/Pods-Bank-CleanSwift-Bank-CleanSwiftUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bank-CleanSwift-Bank-CleanSwiftUITests/Pods-Bank-CleanSwift-Bank-CleanSwiftUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7814A3CE020B7E9B90B86F13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bank-CleanSwift/Pods-Bank-CleanSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bank-CleanSwift/Pods-Bank-CleanSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bank-CleanSwift/Pods-Bank-CleanSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B6BAB75A293D5B1810120A65 /* [CP] Check Pods Manifest.lock */ = {

@@ -6,6 +6,7 @@ target 'Bank-CleanSwift' do
   use_frameworks!
 
   # Pods for Bank-CleanSwift
+  pod 'IQKeyboardManagerSwift'
 
   target 'Bank-CleanSwiftTests' do
     inherit! :search_paths
