@@ -12,12 +12,14 @@ PODS:
     - iOSSnapshotTestCase (~> 5.0)
     - Nimble (~> 7.0)
   - Quick (3.0.0)
+  - SwiftKeychainWrapper (3.4.0)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Nimble
   - Nimble-Snapshots
   - Quick
+  - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
@@ -26,6 +28,7 @@ SPEC REPOS:
     - Nimble
     - Nimble-Snapshots
     - Quick
+    - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   iOSSnapshotTestCase: 2d51aa06775e95cecb0a1fb9c5c159ccd1dd4596
@@ -33,7 +36,8 @@ SPEC CHECKSUMS:
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
   Nimble-Snapshots: bbd1ab264bacc24a9ce24a8363bc05aac783aeb0
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
+  SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
 
-PODFILE CHECKSUM: 909d85d4f7ca32ad46e82d540b9312f3879f2791
+PODFILE CHECKSUM: a1a49cc324f9ab3b3c225ea2d52aa9904249bdf2
 
 COCOAPODS: 1.9.3

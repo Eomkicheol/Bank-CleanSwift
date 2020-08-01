@@ -11,10 +11,8 @@
 		5D9FE37547BD7263C7DDF760 /* Pods_Bank_CleanSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FADBF09F2D2469AA7C7990E /* Pods_Bank_CleanSwiftTests.framework */; };
 		7547DAE8D3ED139AE687D7A9 /* Pods_Bank_CleanSwift_Bank_CleanSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6F5499F6445CDFD82DE6F53 /* Pods_Bank_CleanSwift_Bank_CleanSwiftUITests.framework */; };
 		FF3CDD6724D4FF1700C5F8D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3CDD6624D4FF1700C5F8D4 /* AppDelegate.swift */; };
-		FF3CDD6B24D4FF1700C5F8D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3CDD6A24D4FF1700C5F8D4 /* ViewController.swift */; };
 		FF3CDD7024D4FF1A00C5F8D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF3CDD6F24D4FF1A00C5F8D4 /* Assets.xcassets */; };
 		FF3CDD7324D4FF1A00C5F8D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3CDD7124D4FF1A00C5F8D4 /* LaunchScreen.storyboard */; };
-		FF3CDD7E24D4FF1A00C5F8D4 /* Bank_CleanSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3CDD7D24D4FF1A00C5F8D4 /* Bank_CleanSwiftTests.swift */; };
 		FF3CDD8924D4FF1A00C5F8D4 /* Bank_CleanSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3CDD8824D4FF1A00C5F8D4 /* Bank_CleanSwiftUITests.swift */; };
 		FF3CDD9F24D5104000C5F8D4 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3CDD9924D5104000C5F8D4 /* LoginPresenter.swift */; };
 		FF3CDDA024D5104000C5F8D4 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3CDD9A24D5104000C5F8D4 /* LoginWorker.swift */; };
@@ -24,8 +22,27 @@
 		FF3CDDA424D5104000C5F8D4 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3CDD9E24D5104000C5F8D4 /* LoginInteractor.swift */; };
 		FF3CDDA624D5108C00C5F8D4 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF3CDDA524D5108C00C5F8D4 /* LoginViewController.xib */; };
 		FFAA494324D5BD7F006B7278 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFAA494524D5BD7F006B7278 /* Localizable.strings */; };
-		FFAA494924D5BE1D006B7278 /* Swift+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA494824D5BE1D006B7278 /* Swift+Localizable.swift */; };
+		FFAA494924D5BE1D006B7278 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA494824D5BE1D006B7278 /* String+Localizable.swift */; };
 		FFAA494C24D5D033006B7278 /* LoginViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA494B24D5D033006B7278 /* LoginViewControllerSpec.swift */; };
+		FFAA494F24D5DC2B006B7278 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA494E24D5DC2B006B7278 /* UserAccount.swift */; };
+		FFAA495224D5DD05006B7278 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA495124D5DD05006B7278 /* ApiProvider.swift */; };
+		FFAA495824D5FE6A006B7278 /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA495724D5FE6A006B7278 /* UserMapper.swift */; };
+		FFAA495A24D5FEBA006B7278 /* BankError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA495924D5FEBA006B7278 /* BankError.swift */; };
+		FFAA495C24D6050B006B7278 /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA495B24D6050B006B7278 /* LoginError.swift */; };
+		FFAA495F24D60AE6006B7278 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA495E24D60AE6006B7278 /* BaseViewController.swift */; };
+		FFAA496124D615E5006B7278 /* BankHttpProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA496024D615E5006B7278 /* BankHttpProvider.swift */; };
+		FFAA496324D63C3C006B7278 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA496224D63C3C006B7278 /* SpinnerViewController.swift */; };
+		FFAA496624D63ED6006B7278 /* SpinnerViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA496524D63ED6006B7278 /* SpinnerViewControllerSpec.swift */; };
+		FFAA496824D64189006B7278 /* BaseViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA496724D64189006B7278 /* BaseViewControllerSpec.swift */; };
+		FFAA496B24D64313006B7278 /* UserMapperSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA496A24D64313006B7278 /* UserMapperSpec.swift */; };
+		FFAA496E24D645FF006B7278 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA496D24D645FF006B7278 /* URLProtocolStub.swift */; };
+		FFAA497124D6468C006B7278 /* BankHttpProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA497024D6468C006B7278 /* BankHttpProviderSpec.swift */; };
+		FFAA497324D66667006B7278 /* UserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA497224D66667006B7278 /* UserProvider.swift */; };
+		FFAA497524D667EC006B7278 /* UserProviderImplSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA497424D667EC006B7278 /* UserProviderImplSpec.swift */; };
+		FFCFDC7D24D6F5260053A903 /* LoginWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCFDC7C24D6F5260053A903 /* LoginWorkerSpec.swift */; };
+		FFCFDC7F24D6F6CD0053A903 /* QuickSpec+Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCFDC7E24D6F6CD0053A903 /* QuickSpec+Stubs.swift */; };
+		FFCFDC8124D6F95E0053A903 /* LoginInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCFDC8024D6F95E0053A903 /* LoginInteractorSpec.swift */; };
+		FFCFDC8324D70BED0053A903 /* LoginPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCFDC8224D70BED0053A903 /* LoginPresenterSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +74,10 @@
 		FCE06F0A8BD3ABFF5A899B19 /* Pods-Bank-CleanSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank-CleanSwift.release.xcconfig"; path = "Target Support Files/Pods-Bank-CleanSwift/Pods-Bank-CleanSwift.release.xcconfig"; sourceTree = "<group>"; };
 		FF3CDD6324D4FF1700C5F8D4 /* Bank-CleanSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bank-CleanSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3CDD6624D4FF1700C5F8D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF3CDD6A24D4FF1700C5F8D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF3CDD6F24D4FF1A00C5F8D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF3CDD7224D4FF1A00C5F8D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF3CDD7424D4FF1A00C5F8D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF3CDD7924D4FF1A00C5F8D4 /* Bank-CleanSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bank-CleanSwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF3CDD7D24D4FF1A00C5F8D4 /* Bank_CleanSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank_CleanSwiftTests.swift; sourceTree = "<group>"; };
 		FF3CDD7F24D4FF1A00C5F8D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF3CDD8424D4FF1A00C5F8D4 /* Bank-CleanSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bank-CleanSwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3CDD8824D4FF1A00C5F8D4 /* Bank_CleanSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank_CleanSwiftUITests.swift; sourceTree = "<group>"; };
@@ -76,8 +91,27 @@
 		FF3CDDA524D5108C00C5F8D4 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		FFAA494424D5BD7F006B7278 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FFAA494624D5BD8C006B7278 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		FFAA494824D5BE1D006B7278 /* Swift+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Localizable.swift"; sourceTree = "<group>"; };
+		FFAA494824D5BE1D006B7278 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		FFAA494B24D5D033006B7278 /* LoginViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerSpec.swift; sourceTree = "<group>"; };
+		FFAA494E24D5DC2B006B7278 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		FFAA495124D5DD05006B7278 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
+		FFAA495724D5FE6A006B7278 /* UserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
+		FFAA495924D5FEBA006B7278 /* BankError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankError.swift; sourceTree = "<group>"; };
+		FFAA495B24D6050B006B7278 /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
+		FFAA495E24D60AE6006B7278 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FFAA496024D615E5006B7278 /* BankHttpProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankHttpProvider.swift; sourceTree = "<group>"; };
+		FFAA496224D63C3C006B7278 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		FFAA496524D63ED6006B7278 /* SpinnerViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewControllerSpec.swift; sourceTree = "<group>"; };
+		FFAA496724D64189006B7278 /* BaseViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerSpec.swift; sourceTree = "<group>"; };
+		FFAA496A24D64313006B7278 /* UserMapperSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapperSpec.swift; sourceTree = "<group>"; };
+		FFAA496D24D645FF006B7278 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
+		FFAA497024D6468C006B7278 /* BankHttpProviderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankHttpProviderSpec.swift; sourceTree = "<group>"; };
+		FFAA497224D66667006B7278 /* UserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProvider.swift; sourceTree = "<group>"; };
+		FFAA497424D667EC006B7278 /* UserProviderImplSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProviderImplSpec.swift; sourceTree = "<group>"; };
+		FFCFDC7C24D6F5260053A903 /* LoginWorkerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorkerSpec.swift; sourceTree = "<group>"; };
+		FFCFDC7E24D6F6CD0053A903 /* QuickSpec+Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuickSpec+Stubs.swift"; sourceTree = "<group>"; };
+		FFCFDC8024D6F95E0053A903 /* LoginInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorSpec.swift; sourceTree = "<group>"; };
+		FFCFDC8224D70BED0053A903 /* LoginPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +199,11 @@
 		FF3CDD7C24D4FF1A00C5F8D4 /* Bank-CleanSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				FFAA496C24D645E1006B7278 /* Stub */,
+				FFAA496424D63EB5006B7278 /* Component */,
+				FFAA496924D64305006B7278 /* Mapper */,
+				FFAA496F24D6463D006B7278 /* Provider */,
 				FFAA494A24D5D01B006B7278 /* Login */,
-				FF3CDD7D24D4FF1A00C5F8D4 /* Bank_CleanSwiftTests.swift */,
 				FF3CDD7F24D4FF1A00C5F8D4 /* Info.plist */,
 			);
 			path = "Bank-CleanSwiftTests";
@@ -185,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				FF3CDD6624D4FF1700C5F8D4 /* AppDelegate.swift */,
-				FF3CDD6A24D4FF1700C5F8D4 /* ViewController.swift */,
 				FF3CDD6F24D4FF1A00C5F8D4 /* Assets.xcassets */,
 				FF3CDD7124D4FF1A00C5F8D4 /* LaunchScreen.storyboard */,
 				FF3CDD7424D4FF1A00C5F8D4 /* Info.plist */,
@@ -197,6 +233,10 @@
 		FF3CDD9724D501A900C5F8D4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FFAA495D24D60AD4006B7278 /* Component */,
+				FFAA495624D5FE1E006B7278 /* Mapper */,
+				FFAA495024D5DCF3006B7278 /* Provider */,
+				FFAA494D24D5DC06006B7278 /* Model */,
 				FFAA494724D5BE07006B7278 /* Extensions */,
 				FF3CDD9824D501B300C5F8D4 /* Login */,
 			);
@@ -213,6 +253,7 @@
 				FF3CDD9E24D5104000C5F8D4 /* LoginInteractor.swift */,
 				FF3CDD9D24D5104000C5F8D4 /* LoginViewController.swift */,
 				FF3CDDA524D5108C00C5F8D4 /* LoginViewController.xib */,
+				FFAA495B24D6050B006B7278 /* LoginError.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -220,7 +261,7 @@
 		FFAA494724D5BE07006B7278 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FFAA494824D5BE1D006B7278 /* Swift+Localizable.swift */,
+				FFAA494824D5BE1D006B7278 /* String+Localizable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -229,8 +270,82 @@
 			isa = PBXGroup;
 			children = (
 				FFAA494B24D5D033006B7278 /* LoginViewControllerSpec.swift */,
+				FFCFDC7C24D6F5260053A903 /* LoginWorkerSpec.swift */,
+				FFCFDC8024D6F95E0053A903 /* LoginInteractorSpec.swift */,
+				FFCFDC8224D70BED0053A903 /* LoginPresenterSpec.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		FFAA494D24D5DC06006B7278 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFAA494E24D5DC2B006B7278 /* UserAccount.swift */,
+				FFAA495924D5FEBA006B7278 /* BankError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFAA495024D5DCF3006B7278 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				FFAA495124D5DD05006B7278 /* ApiProvider.swift */,
+				FFAA496024D615E5006B7278 /* BankHttpProvider.swift */,
+				FFAA497224D66667006B7278 /* UserProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		FFAA495624D5FE1E006B7278 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				FFAA495724D5FE6A006B7278 /* UserMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		FFAA495D24D60AD4006B7278 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				FFAA495E24D60AE6006B7278 /* BaseViewController.swift */,
+				FFAA496224D63C3C006B7278 /* SpinnerViewController.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		FFAA496424D63EB5006B7278 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				FFAA496524D63ED6006B7278 /* SpinnerViewControllerSpec.swift */,
+				FFAA496724D64189006B7278 /* BaseViewControllerSpec.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		FFAA496924D64305006B7278 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				FFAA496A24D64313006B7278 /* UserMapperSpec.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		FFAA496C24D645E1006B7278 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				FFAA496D24D645FF006B7278 /* URLProtocolStub.swift */,
+				FFCFDC7E24D6F6CD0053A903 /* QuickSpec+Stubs.swift */,
+			);
+			path = Stub;
+			sourceTree = "<group>";
+		};
+		FFAA496F24D6463D006B7278 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				FFAA497024D6468C006B7278 /* BankHttpProviderSpec.swift */,
+				FFAA497424D667EC006B7278 /* UserProviderImplSpec.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,14 +607,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFAA494924D5BE1D006B7278 /* Swift+Localizable.swift in Sources */,
+				FFAA494924D5BE1D006B7278 /* String+Localizable.swift in Sources */,
+				FFAA497324D66667006B7278 /* UserProvider.swift in Sources */,
 				FF3CDDA324D5104000C5F8D4 /* LoginViewController.swift in Sources */,
+				FFAA495C24D6050B006B7278 /* LoginError.swift in Sources */,
 				FF3CDD9F24D5104000C5F8D4 /* LoginPresenter.swift in Sources */,
-				FF3CDD6B24D4FF1700C5F8D4 /* ViewController.swift in Sources */,
+				FFAA495F24D60AE6006B7278 /* BaseViewController.swift in Sources */,
+				FFAA495224D5DD05006B7278 /* ApiProvider.swift in Sources */,
+				FFAA494F24D5DC2B006B7278 /* UserAccount.swift in Sources */,
+				FFAA495A24D5FEBA006B7278 /* BankError.swift in Sources */,
+				FFAA496124D615E5006B7278 /* BankHttpProvider.swift in Sources */,
+				FFAA495824D5FE6A006B7278 /* UserMapper.swift in Sources */,
 				FF3CDD6724D4FF1700C5F8D4 /* AppDelegate.swift in Sources */,
 				FF3CDDA424D5104000C5F8D4 /* LoginInteractor.swift in Sources */,
 				FF3CDDA224D5104000C5F8D4 /* LoginModels.swift in Sources */,
 				FF3CDDA124D5104000C5F8D4 /* LoginRouter.swift in Sources */,
+				FFAA496324D63C3C006B7278 /* SpinnerViewController.swift in Sources */,
 				FF3CDDA024D5104000C5F8D4 /* LoginWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,7 +631,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF3CDD7E24D4FF1A00C5F8D4 /* Bank_CleanSwiftTests.swift in Sources */,
+				FFCFDC7F24D6F6CD0053A903 /* QuickSpec+Stubs.swift in Sources */,
+				FFAA496824D64189006B7278 /* BaseViewControllerSpec.swift in Sources */,
+				FFAA496E24D645FF006B7278 /* URLProtocolStub.swift in Sources */,
+				FFAA497124D6468C006B7278 /* BankHttpProviderSpec.swift in Sources */,
+				FFCFDC8124D6F95E0053A903 /* LoginInteractorSpec.swift in Sources */,
+				FFAA496B24D64313006B7278 /* UserMapperSpec.swift in Sources */,
+				FFCFDC7D24D6F5260053A903 /* LoginWorkerSpec.swift in Sources */,
+				FFCFDC8324D70BED0053A903 /* LoginPresenterSpec.swift in Sources */,
+				FFAA497524D667EC006B7278 /* UserProviderImplSpec.swift in Sources */,
+				FFAA496624D63ED6006B7278 /* SpinnerViewControllerSpec.swift in Sources */,
 				FFAA494C24D5D033006B7278 /* LoginViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,3 +9,10 @@
 login.userTextField.placeholder = "User";
 login.passwordTextField.placeholder = "Password";
 login.loginButton.text = "Login";
+
+login.alert.error.title = "Error";
+login.alert.error.dismissButton = "Ok";
+
+login.error.invalidUser = "Username must be an email or cpf using numbers only";
+login.error.invalidPassword = "Password must contain at least one uppercase character, special character and an alphanumeric character";
+login.error.invalidData = "Invalid data";

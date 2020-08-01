@@ -16,13 +16,32 @@ enum Login
 {
   // MARK: Use cases
   
-    struct Request
-    {
+    struct Request {
+        let userName: String
+        let password: String
     }
-    struct Response
-    {
+    
+    struct UserResponse {
+        let userAccount: UserAccount
     }
-    struct ViewModel
-    {
+    
+    struct ErrorResponse {
+        let error: LoginError
+    }
+    
+    struct UserNameResponse {
+        let userName: String
+    }
+    
+    struct UserViewModel {
+        let userAccount: UserAccount
+    }
+    
+    struct UserNameViewModel {
+        let userName: String
+    }
+    
+    struct ErrorViewModel {
+        let error: LoginError
     }
 }

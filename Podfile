@@ -7,6 +7,7 @@ target 'Bank-CleanSwift' do
 
   # Pods for Bank-CleanSwift
   pod 'IQKeyboardManagerSwift'
+  pod 'SwiftKeychainWrapper'
 
   target 'Bank-CleanSwiftTests' do
     inherit! :search_paths

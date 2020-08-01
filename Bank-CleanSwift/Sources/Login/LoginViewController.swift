@@ -12,12 +12,25 @@
 
 import UIKit
 
-protocol LoginDisplayLogic: class
-{
-  func displaySomething(viewModel: Login.ViewModel)
+protocol LoginDisplayLogic: class {
+    
+    func presentError(errorViewModel: Login.ErrorViewModel)
+    
+    func presentStatements(userViewModel: Login.UserViewModel)
+    
+    func fillUserNameTextFieldLastLoggedUser(userNameViewModel: Login.UserNameViewModel)
 }
 
-class LoginViewController: UIViewController, LoginDisplayLogic {
+private struct LoginViewControllerConstants {
+    static let userTextFieldPlaceholder = "login.userTextField.placeholder"
+    static let passwordTextFieldPlaceholder = "login.passwordTextField.placeholder"
+    static let loginButtonLabel = "login.loginButton.text"
+    
+    static let errorAlertTitle = "login.alert.error.title"
+    static let errorAlertDismiss = "login.alert.error.dismissButton"
+}
+
+class LoginViewController: BaseViewController {
     
     private let loginButtonRadius: CGFloat = 4
     
@@ -41,10 +54,39 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        doSomething()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         interactor?.retrieveLastLoggedUserName()
     }
   
+    @IBAction func doLogin(_ sender: Any) {
+        let request = Login.Request(userName: self.userTextField.text ?? "", password: self.passwordTextField.text ?? "")
+        self.showSpinner()
+        interactor?.login(request: request)
+       
+    }
+    
+}
 
+extension LoginViewController: LoginDisplayLogic {
+    
+    func fillUserNameTextFieldLastLoggedUser(userNameViewModel: Login.UserNameViewModel) {
+        self.userTextField.text = userNameViewModel.userName
+    }
+    
+    func presentError(errorViewModel: Login.ErrorViewModel) {
+        self.stopSpinner()
+        let alert = self.buildAlert(error: errorViewModel.error)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func presentStatements(userViewModel: Login.UserViewModel) {
+        self.stopSpinner()
+        router?.goToStatements()
+    }
+    
+    
 }
 
 // MARK: private func
@@ -64,25 +106,21 @@ extension LoginViewController {
     }
         
     private func setupView() {
-        self.userTextField.placeholder = "login.userTextField.placeholder".localized()
-        self.passwordTextField.placeholder = "login.passwordTextField.placeholder".localized()
-        self.loginButton.setTitle("login.loginButton.text".localized(), for: .normal)
+        self.userTextField.placeholder = LoginViewControllerConstants.userTextFieldPlaceholder.localized()
+        self.passwordTextField.placeholder = LoginViewControllerConstants.passwordTextFieldPlaceholder.localized()
+        self.loginButton.setTitle(LoginViewControllerConstants.loginButtonLabel.localized(), for: .normal)
         self.loginButton.layer.cornerRadius = loginButtonRadius
+       
     }
 
-    // MARK: Do something
-
-    //@IBOutlet weak var nameTextField: UITextField!
-
-    func doSomething()
-    {
-        let request = Login.Request()
-        interactor?.doSomething(request: request)
-    }
-
-    func displaySomething(viewModel: Login.ViewModel)
-    {
-    //nameTextField.text = viewModel.name
+    private func buildAlert(error: LoginError) -> UIAlertController {
+        let alert = UIAlertController(title: LoginViewControllerConstants.errorAlertTitle.localized(), message: error.localizedDescription, preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: LoginViewControllerConstants.errorAlertDismiss.localized(), style: .cancel) { [weak self] (action) in
+            guard let self = self else { return }
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(dismissAction)
+        return alert
     }
     
 }

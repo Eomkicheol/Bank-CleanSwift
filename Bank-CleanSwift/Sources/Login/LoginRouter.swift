@@ -15,6 +15,7 @@ import UIKit
 @objc protocol LoginRoutingLogic
 {
   //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func goToStatements()
 }
 
 protocol LoginDataPassing
@@ -28,6 +29,9 @@ class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
   var dataStore: LoginDataStore?
   
   // MARK: Routing
+    func goToStatements() {
+        print("go to statments")
+    }
   
   //func routeToSomewhere(segue: UIStoryboardSegue?)
   //{

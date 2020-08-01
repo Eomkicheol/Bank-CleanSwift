@@ -12,9 +12,55 @@
 
 import UIKit
 
-class LoginWorker
-{
-  func doSomeWork()
-  {
-  }
+protocol LoginService {
+    
+    typealias Result = Swift.Result<UserAccount, LoginError>
+    
+    func login(userName: String, password: String, callback: @escaping (Result) -> Void)
+    
+    func saveUserName(username: String)
+    
+    func getLastLoggedUser() -> String?
+}
+
+class LoginWorker: LoginService {
+    
+    let apiProvider: ApiProvider
+    let userProvider: UserProvider
+    
+    init(apiProvider: ApiProvider, userProvider: UserProvider) {
+        self.apiProvider = apiProvider
+        self.userProvider = userProvider
+    }
+    
+    func login(userName: String, password: String, callback: @escaping (LoginService.Result) -> Void) {
+        self.apiProvider.login(userName: userName, password: password) { [weak self] (result) in
+            guard let self = self else {return}
+            switch result {
+            case .success(let data):
+                callback(self.map(data: data))
+            case .failure(let error):
+                callback(.failure(LoginError.apiError(message: error.localizedDescription)))
+            }
+        }
+    }
+    
+    private func map(data: Data) -> LoginService.Result {
+        do {
+            let userAccount = try UserMapper.map(data)
+            return .success(userAccount)
+        } catch  {
+            return .failure(error as! LoginError)
+        }
+    }
+    
+    func saveUserName(username: String) {
+        self.userProvider.saveUserName(userName: username)
+    }
+    
+    func getLastLoggedUser() -> String? {
+        return self.userProvider.getLastLoggedUser()
+    }
+    
+    
 }

@@ -12,20 +12,31 @@
 
 import UIKit
 
-protocol LoginPresentationLogic
-{
-  func presentSomething(response: Login.Response)
+protocol LoginPresentationLogic{
+    
+    func presentError(errorResponse: Login.ErrorResponse)
+    
+    func presentStatements(userResponse: Login.UserResponse)
+    
+    func presentLastUserName(userNameResponse: Login.UserNameResponse)
 }
 
-class LoginPresenter: LoginPresentationLogic
-{
-  weak var viewController: LoginDisplayLogic?
+class LoginPresenter: LoginPresentationLogic {
+    
+    weak var viewController: LoginDisplayLogic?
   
-  // MARK: Do something
-  
-  func presentSomething(response: Login.Response)
-  {
-    let viewModel = Login.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    func presentError(errorResponse: Login.ErrorResponse) {
+        let errorViewModel = Login.ErrorViewModel(error: errorResponse.error)
+        viewController?.presentError(errorViewModel: errorViewModel)
+    }
+    
+    func presentStatements(userResponse: Login.UserResponse) {
+        let userViewModel = Login.UserViewModel(userAccount: userResponse.userAccount)
+        viewController?.presentStatements(userViewModel: userViewModel)
+    }
+    
+    func presentLastUserName(userNameResponse: Login.UserNameResponse) {
+        let userNameViewModel = Login.UserNameViewModel(userName: userNameResponse.userName)
+        viewController?.fillUserNameTextFieldLastLoggedUser(userNameViewModel: userNameViewModel)
+    }
 }

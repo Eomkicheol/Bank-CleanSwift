@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Bank-CleanSwift-Bank-CleanSwiftUITests/Pods-Bank-CleanSwift-Bank-CleanSwiftUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
+${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework
