@@ -12,8 +12,10 @@ import Nimble_Snapshots
 
 @testable import Bank_CleanSwift
 
-class StudUserDatatore: StatementsDataStore {
-    var userAccount: UserAccount?
+class NavigationControllerStub: UINavigationController {
+    override func popViewController(animated: Bool) -> UIViewController? {
+        super.popViewController(animated: false)
+    }
 }
 
 class StatementsViewControllerSpec: QuickSpec {
@@ -31,6 +33,15 @@ class StatementsViewControllerSpec: QuickSpec {
                 let window = UIWindow()
                 window.addSubview(sut.view)
                 expect(sut.view).to(haveValidSnapshot())
+            }
+            
+            it("should pop when logout") {
+                let navigationController = NavigationControllerStub(rootViewController: LoginViewController())
+                navigationController.pushViewController(sut, animated: false)
+                sut.logout(self)
+                
+                expect(navigationController.visibleViewController).notTo(equal(sut))
+                
             }
         }
     }

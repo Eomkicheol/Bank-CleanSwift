@@ -30,45 +30,17 @@ class StatementsViewController: UIViewController, StatementsDisplayLogic {
 
   // MARK: Object lifecycle
   
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = StatementsInteractor()
-    let presenter = StatementsPresenter()
-    let router = StatementsRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
+
+    required init?(coder aDecoder: NSCoder)
+    {
+    super.init(coder: aDecoder)
+        setup()
+    }
   
     // MARK: View lifecycle
 
@@ -82,7 +54,10 @@ class StatementsViewController: UIViewController, StatementsDisplayLogic {
         .lightContent
     }
   
-  // MARK: Do something
+    @IBAction func logout(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    // MARK: Do something
   
   //@IBOutlet weak var nameTextField: UITextField!
   
@@ -100,6 +75,19 @@ class StatementsViewController: UIViewController, StatementsDisplayLogic {
 
 // MARK: private
 extension StatementsViewController {
+    
+    private func setup() {
+        let viewController = self
+        let interactor = StatementsInteractor()
+        let presenter = StatementsPresenter()
+        let router = StatementsRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
     
     private func setupUserHeader() {
         guard let user = router?.dataStore?.userAccount else { fatalError("expected user") }

@@ -1,2 +1,3 @@
 ignore:
 - "Bank-CleanSwift/Support Files/"
+- "Bank-CleanSwiftTests"

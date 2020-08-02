@@ -42,6 +42,9 @@
                                 <constraint firstAttribute="width" constant="27" id="hEk-7j-twO"/>
                             </constraints>
                             <state key="normal" backgroundImage="logout"/>
+                            <connections>
+                                <action selector="logout:" destination="-1" eventType="touchUpInside" id="fWe-yf-FMs"/>
+                            </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="6Oh-go-ZWf" userLabel="contaField">
                             <rect key="frame" x="18" y="77" width="265.5" height="48"/>
