@@ -17,10 +17,16 @@ protocol StatementsDisplayLogic: class
   func displaySomething(viewModel: Statements.Something.ViewModel)
 }
 
-class StatementsViewController: UIViewController, StatementsDisplayLogic
-{
-  var interactor: StatementsBusinessLogic?
-  var router: (NSObjectProtocol & StatementsRoutingLogic & StatementsDataPassing)?
+class StatementsViewController: UIViewController, StatementsDisplayLogic {
+    
+    @IBOutlet private(set) weak var userNameLabel: UILabel!
+    @IBOutlet private(set) weak var contaLabel: UILabel!
+    @IBOutlet private(set) weak var contaValueLabel: UILabel!
+    @IBOutlet private(set) weak var saldoLabel: UILabel!
+    @IBOutlet private(set) weak var saldoValueLabel: UILabel!
+    
+    var interactor: StatementsBusinessLogic?
+    var router: (NSObjectProtocol & StatementsRoutingLogic & StatementsDataPassing)?
 
   // MARK: Object lifecycle
   
@@ -64,13 +70,17 @@ class StatementsViewController: UIViewController, StatementsDisplayLogic
     }
   }
   
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
-  }
+    // MARK: View lifecycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setupUserHeader()
+        
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
   
   // MARK: Do something
   
@@ -86,4 +96,28 @@ class StatementsViewController: UIViewController, StatementsDisplayLogic
   {
     //nameTextField.text = viewModel.name
   }
+}
+
+// MARK: private
+extension StatementsViewController {
+    
+    private func setupUserHeader() {
+        guard let user = router?.dataStore?.userAccount else { fatalError("expected user") }
+        userNameLabel.text = user.name
+        contaLabel.text = "statements.contaLabel".localized()
+        contaValueLabel.text = "\(user.bankAccount ?? "") / \(user.agency ?? "")"
+        saldoLabel.text = "statements.saldoLabel".localized()
+        saldoValueLabel.text = self.formatCurrency(value: user.balance ?? 0.0)
+        
+    }
+    
+    private func formatCurrency(value: Double) -> String {
+        let currencyFormatter = NumberFormatter()
+//        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale.current
+        let priceString = currencyFormatter.string(from: NSNumber(value: value))!
+        return priceString
+    }
+    
 }

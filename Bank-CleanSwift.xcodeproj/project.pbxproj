@@ -29,6 +29,7 @@
 		FF72F91324D71FA300EC4D9C /* StatementsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72F90D24D71FA300EC4D9C /* StatementsInteractor.swift */; };
 		FF72F91524D71FEA00EC4D9C /* StatementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF72F91424D71FEA00EC4D9C /* StatementsViewController.xib */; };
 		FF72F91724D7257000EC4D9C /* LoginRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72F91624D7257000EC4D9C /* LoginRouterSpec.swift */; };
+		FF72F91F24D7456E00EC4D9C /* StatementsViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72F91E24D7456E00EC4D9C /* StatementsViewControllerSpec.swift */; };
 		FFAA494324D5BD7F006B7278 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFAA494524D5BD7F006B7278 /* Localizable.strings */; };
 		FFAA494924D5BE1D006B7278 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA494824D5BE1D006B7278 /* String+Localizable.swift */; };
 		FFAA494C24D5D033006B7278 /* LoginViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA494B24D5D033006B7278 /* LoginViewControllerSpec.swift */; };
@@ -105,6 +106,7 @@
 		FF72F90D24D71FA300EC4D9C /* StatementsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsInteractor.swift; sourceTree = "<group>"; };
 		FF72F91424D71FEA00EC4D9C /* StatementsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatementsViewController.xib; sourceTree = "<group>"; };
 		FF72F91624D7257000EC4D9C /* LoginRouterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouterSpec.swift; sourceTree = "<group>"; };
+		FF72F91E24D7456E00EC4D9C /* StatementsViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsViewControllerSpec.swift; sourceTree = "<group>"; };
 		FFAA494424D5BD7F006B7278 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FFAA494624D5BD8C006B7278 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		FFAA494824D5BE1D006B7278 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				FFAA496924D64305006B7278 /* Mapper */,
 				FFAA496F24D6463D006B7278 /* Provider */,
 				FFAA494A24D5D01B006B7278 /* Login */,
+				FF72F91D24D7453F00EC4D9C /* Statements */,
 				FF3CDD7F24D4FF1A00C5F8D4 /* Info.plist */,
 			);
 			path = "Bank-CleanSwiftTests";
@@ -285,6 +288,14 @@
 				FF72F90C24D71FA300EC4D9C /* StatementsViewController.swift */,
 				FF72F90D24D71FA300EC4D9C /* StatementsInteractor.swift */,
 				FF72F91424D71FEA00EC4D9C /* StatementsViewController.xib */,
+			);
+			path = Statements;
+			sourceTree = "<group>";
+		};
+		FF72F91D24D7453F00EC4D9C /* Statements */ = {
+			isa = PBXGroup;
+			children = (
+				FF72F91E24D7456E00EC4D9C /* StatementsViewControllerSpec.swift */,
 			);
 			path = Statements;
 			sourceTree = "<group>";
@@ -672,6 +683,7 @@
 			files = (
 				FFCFDC7F24D6F6CD0053A903 /* QuickSpec+Stubs.swift in Sources */,
 				FFAA496824D64189006B7278 /* BaseViewControllerSpec.swift in Sources */,
+				FF72F91F24D7456E00EC4D9C /* StatementsViewControllerSpec.swift in Sources */,
 				FFAA496E24D645FF006B7278 /* URLProtocolStub.swift in Sources */,
 				FFAA497124D6468C006B7278 /* BankHttpProviderSpec.swift in Sources */,
 				FFCFDC8124D6F95E0053A903 /* LoginInteractorSpec.swift in Sources */,

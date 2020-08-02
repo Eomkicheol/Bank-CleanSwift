@@ -16,3 +16,6 @@ login.alert.error.dismissButton = "Ok";
 login.error.invalidUser = "Username must be an email or cpf using numbers only";
 login.error.invalidPassword = "Password must contain at least one uppercase character, special character and an alphanumeric character";
 login.error.invalidData = "Invalid data";
+
+statements.contaLabel = "Account";
+statements.saldoLabel = "Balance";

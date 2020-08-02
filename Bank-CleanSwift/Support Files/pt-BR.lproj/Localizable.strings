@@ -16,3 +16,6 @@ login.alert.error.dismissButton = "Ok";
 login.error.invalidUser = "Usuário deve ser um email ou cpf apenas com números";
 login.error.invalidPassword = "Senha deve conter pelo menos um caracter maiusculo, caracter especial e um caracter alfanumerico";
 login.error.invalidData = "Dados inválidos";
+
+statements.contaLabel = "Conta";
+statements.saldoLabel = "Saldo";
