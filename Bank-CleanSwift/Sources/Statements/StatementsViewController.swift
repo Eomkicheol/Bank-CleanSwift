@@ -74,6 +74,9 @@ extension StatementsViewController: StatementsDisplayLogic {
     func displayStatements(viewModel: Statements.ShowStatements.ViewModel) {
         self.statements = viewModel.statements
         self.stopSpinner()
+        if #available(iOS 10.0, *) {
+            self.tableView.refreshControl?.endRefreshing()
+        }
         self.tableView.reloadData()
     }
     
@@ -135,6 +138,14 @@ extension StatementsViewController {
         let nib = UINib(nibName: "StatementTableCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: statementCellIdentifier)
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        if #available(iOS 10.0, *) {
+            self.tableView.refreshControl =  {
+                let refreshControl = UIRefreshControl()
+                refreshControl.addTarget(self, action: #selector(refreshStatements), for: .valueChanged)
+                
+                return refreshControl
+            }()
+        }
     }
     
     private func buildAlert(error: BankError) -> UIAlertController {
@@ -152,6 +163,10 @@ extension StatementsViewController {
     
     private func getStatements() {
         self.showSpinner()
+        self.interactor?.getStatments()
+    }
+    
+    @objc private func refreshStatements() {
         self.interactor?.getStatments()
     }
     
