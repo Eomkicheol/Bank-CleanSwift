@@ -14,7 +14,7 @@ import UIKit
 
 @objc protocol StatementsRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+
 }
 
 protocol StatementsDataPassing

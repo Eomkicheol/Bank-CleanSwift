@@ -10,11 +10,45 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import Foundation
 
-class StatementsWorker
-{
-  func doSomeWork()
-  {
-  }
+protocol StatementsService {
+    
+    typealias StatementsResult = Swift.Result<[Statement], BankError>
+    
+    func getStatements(userId: Int, callback: @escaping (StatementsResult) -> Void)
+}
+
+
+class StatementsWorker: StatementsService {
+    
+    let apiProvider: ApiProvider
+    
+    init(apiProvider: ApiProvider) {
+        self.apiProvider = apiProvider
+    }
+  
+    func getStatements(userId: Int, callback: @escaping (StatementsResult) -> Void) {
+        self.apiProvider.fetchStatements(userId: userId) {[weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let data):
+                callback(self.map(data: data))
+            case .failure(let error):
+                callback(.failure(BankError.apiError(message: error.localizedDescription)))
+            }
+        }
+    }
+    
+}
+
+extension StatementsWorker {
+    private func map(data: Data) -> StatementsResult {
+        do {
+            let statements = try StatementsMapper.map(data)
+            return .success(statements)
+        } catch  {
+            return .failure(error as! BankError)
+        }
+    }
 }

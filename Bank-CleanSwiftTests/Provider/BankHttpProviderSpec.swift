@@ -60,6 +60,40 @@ class BankHttpProviderSpec: QuickSpec {
                     }
                 }
             }
+            
+            context("fetchStatements") {
+                it("should call failure when response has error") {
+                    URLProtocolStub.responseStub = URLReponseStub(data: nil, error: AnyError.anyError , response: nil)
+                    
+                    waitUntil { done in
+                        sut.fetchStatements(userId: 1) { (result) in
+                            switch result {
+                            case .success( _):
+                                break
+                            case .failure(let error):
+                                expect(error).notTo(beNil())
+                                done()
+                            }
+                        }
+                    }
+                }
+                
+                it("should call success when response has data") {
+                    URLProtocolStub.responseStub = URLReponseStub(data: Data(), error: nil , response: self.validReponse())
+                    
+                    waitUntil { done in
+                        sut.fetchStatements(userId: 1) { (result) in
+                            switch result {
+                            case .success(let data):
+                                expect(data).notTo(beNil())
+                                done()
+                            case .failure( _):
+                                break
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

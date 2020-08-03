@@ -33,4 +33,29 @@ extension QuickSpec {
         let data = try! JSONSerialization.data(withJSONObject: jsonData)
         return data
     }
+    
+    func stubStatementsData() -> Data {
+        let jsonData = [
+            "statementList" : [
+                [
+                    "title": "Pagamento",
+                    "desc": "Conta de luz",
+                    "date": "2018-08-15",
+                    "value": -50
+                ]
+            ],
+            "error": [String: Any]()
+            ] as [String : Any]
+        let data = try! JSONSerialization.data(withJSONObject: jsonData)
+        return data
+    }
+    
+    func stubEmptyStatementsData() -> Data {
+        let jsonData = [
+            "statementList" : [],
+            "error": [String: Any]()
+            ] as [String : Any]
+        let data = try! JSONSerialization.data(withJSONObject: jsonData)
+        return data
+    }
 }

@@ -14,6 +14,7 @@
                 <outlet property="contaValueLabel" destination="2ar-Xq-O3i" id="KRw-fG-mNW"/>
                 <outlet property="saldoLabel" destination="kGU-Sh-fh1" id="1kK-wJ-tDQ"/>
                 <outlet property="saldoValueLabel" destination="4UJ-NG-fjm" id="l1T-ND-Cne"/>
+                <outlet property="tableView" destination="Fph-KA-8yt" id="L91-Sh-rWC"/>
                 <outlet property="userNameLabel" destination="u9O-3o-si3" id="aKQ-n4-19o"/>
                 <outlet property="view" destination="iN0-l3-epB" id="un4-pu-Emg"/>
             </connections>
@@ -106,7 +107,7 @@
                         <constraint firstItem="nQe-fP-IUE" firstAttribute="top" secondItem="6Oh-go-ZWf" secondAttribute="bottom" constant="21" id="x8L-Pc-3L7"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fph-KA-8yt">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="42" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fph-KA-8yt">
                     <rect key="frame" x="0.0" y="212" width="375" height="455"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>

@@ -6,16 +6,22 @@
   Copyright © 2020 Scott Takahashi. All rights reserved.
 */
 
+alert.error.title = "Error";
+alert.error.dismissButton = "Ok";
+
 login.userTextField.placeholder = "User";
 login.passwordTextField.placeholder = "Password";
 login.loginButton.text = "Login";
 
-login.alert.error.title = "Error";
-login.alert.error.dismissButton = "Ok";
 
 login.error.invalidUser = "Username must be an email or cpf using numbers only";
 login.error.invalidPassword = "Password must contain at least one uppercase character, special character and an alphanumeric character";
-login.error.invalidData = "Invalid data";
+
+error.invalidData = "Invalid data";
 
 statements.contaLabel = "Account";
 statements.saldoLabel = "Balance";
+
+statements.fetchAgain = "Try again";
+
+statement.table.header = "Recents";

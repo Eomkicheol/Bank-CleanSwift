@@ -14,18 +14,22 @@ import UIKit
 
 enum Statements
 {
-  // MARK: Use cases
+    
+    enum Error {
+        struct Reponse {
+            let error: BankError
+        }
+        struct ViewModel {
+            let error: BankError
+        }
+    }
   
-  enum Something
-  {
-    struct Request
-    {
+    enum ShowStatements {
+        struct Response {
+            let statements: [Statement]
+        }
+        struct ViewModel {
+            let statements: [Statement]
+        }
     }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
 }

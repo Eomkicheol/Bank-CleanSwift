@@ -10,6 +10,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    let alertDismissButtonTitle = "alert.error.dismissButton"
+    
     private(set) lazy var spinnerViewController = SpinnerViewController()
     
     func showSpinner() {
@@ -25,6 +27,14 @@ class BaseViewController: UIViewController {
         spinnerViewController.view.removeFromSuperview()
         spinnerViewController.removeFromParent()
         self.view.isUserInteractionEnabled = true
+    }
+    
+    func buildAlert(error: BankError, actions: [UIAlertAction]) -> UIAlertController {
+        let alert = UIAlertController(title: "alert.error.title".localized(), message: error.localizedDescription, preferredStyle: .alert)
+        for action in actions {
+            alert.addAction(action)
+        }
+        return alert
     }
     
 }

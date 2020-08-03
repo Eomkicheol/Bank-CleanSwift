@@ -79,12 +79,12 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore {
 
 extension LoginInteractor {
     
-    private func userNameOrPasswordHasError(userName: String, password: String) -> LoginError? {
+    private func userNameOrPasswordHasError(userName: String, password: String) -> BankError? {
         if !self.isCPF(userName) && !self.isEmail(userName) {
-            return LoginError.invalidUserInput(message: ErrorMessage.invalidUserName.localized())
+            return BankError.invalidUserInput(message: ErrorMessage.invalidUserName.localized())
         }
         if !self.isValidPassword(password) {
-            return LoginError.invalidUserInput(message: ErrorMessage.invalidPassword.localized())
+            return BankError.invalidUserInput(message: ErrorMessage.invalidPassword.localized())
         }
         return nil
     }

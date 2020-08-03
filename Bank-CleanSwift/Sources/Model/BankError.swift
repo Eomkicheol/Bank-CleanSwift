@@ -6,11 +6,24 @@
 //  Copyright © 2020 Scott Takahashi. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-struct BankError: Codable {
+enum BankError: Swift.Error {
+    case invalidUserInput(message: String)
+    case apiError(message: String)
+}
 
-    let code: Int?
-    let message: String?
+extension BankError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .invalidUserInput(message: let message):
+            return message
+        case .apiError(message: let message):
+            return message
+        }
+    }
+}
+
+extension BankError: Equatable {
     
 }

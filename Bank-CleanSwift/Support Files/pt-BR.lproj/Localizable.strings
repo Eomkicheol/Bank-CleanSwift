@@ -6,16 +6,21 @@
   Copyright © 2020 Scott Takahashi. All rights reserved.
 */
 
+alert.error.title = "Error";
+alert.error.dismissButton = "Ok";
+
 login.userTextField.placeholder = "User";
 login.passwordTextField.placeholder = "Password";
 login.loginButton.text = "Login";
 
-login.alert.error.title = "Erro";
-login.alert.error.dismissButton = "Ok";
-
 login.error.invalidUser = "Usuário deve ser um email ou cpf apenas com números";
 login.error.invalidPassword = "Senha deve conter pelo menos um caracter maiusculo, caracter especial e um caracter alfanumerico";
-login.error.invalidData = "Dados inválidos";
+
+error.invalidData = "Dados inválidos";
 
 statements.contaLabel = "Conta";
 statements.saldoLabel = "Saldo";
+
+statements.fetchAgain = "Tentar novamente";
+
+statement.table.header = "Recentes";

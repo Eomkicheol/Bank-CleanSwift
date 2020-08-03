@@ -13,7 +13,7 @@ import Nimble
 class LoginPresentationLogicSpy: LoginPresentationLogic{
     
     var presentErrorCallsCount = 0
-    var lastError: LoginError?
+    var lastError: BankError?
     func presentError(errorResponse: Login.ErrorResponse) {
         presentErrorCallsCount +=  1
         lastError = errorResponse.error
@@ -39,7 +39,7 @@ class LoginServiceMock: LoginService {
             let userAccount = UserAccount(userId: 1, name: "Name", bankAccount: "1234", agency: "123", balance: 100.0)
             callback(.success(userAccount))
         } else {
-            callback(.failure(LoginError.apiError(message: LoginServiceMock.errorMsg)))
+            callback(.failure(BankError.apiError(message: LoginServiceMock.errorMsg)))
         }
     }
     

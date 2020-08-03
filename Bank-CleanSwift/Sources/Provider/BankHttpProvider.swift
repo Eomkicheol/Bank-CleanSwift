@@ -14,6 +14,7 @@ private struct Api {
     static let postMethod = "POST"
     
     static let loginPath = "/api/login"
+    static let statementsPath = "/api/statements"
     static let contentTypeHeaderKey = "Content-Type"
     static let contentTypeHeaderLoginValue = "application/x-www-form-urlencoded"
     static let userNameKey = "user"
@@ -35,14 +36,36 @@ class BankHttpProvider: ApiProvider {
     
     func login(userName: String, password: String, callbackHandler: @escaping (ApiProvider.Result) -> Void) {
         let urlRequest = self.buildURLLogin(userName: userName, password: password)
-        let task = urlSession.dataTask(with: urlRequest) { (data, response, error) in
-            if let error = error {
-                callbackHandler(.failure(error))
-            } else if let data = data {
-                callbackHandler(.success(data))
-            }
+        urlSession.dataTask(with: urlRequest) { [weak self] (data, response, error) in
+            guard let self = self else { return }
+            self.handleResponse(error, data, callbackHandler: callbackHandler)
+        }.resume()
+    }
+    
+    func fetchStatements(userId: Int, callbackHandler: @escaping (ApiProvider.Result) -> Void) {
+        let url = self.buildURLFetcStatments(userId: userId)
+        urlSession.dataTask(with: url) { [weak self] (data, response, error) in
+            guard let self = self else { return }
+            self.handleResponse(error, data, callbackHandler: callbackHandler)
+        }.resume()
+    }
+    
+}
+
+extension BankHttpProvider {
+    
+    private func buildURLFetcStatments(userId: Int) -> URL{
+        var urlComponent = self.buidBaseURLPageComponents()
+        urlComponent.path = "\(Api.statementsPath)/\(userId)"
+        return urlComponent.url!
+    }
+    
+    private func handleResponse(_ error: Error?, _ data: Data?, callbackHandler: @escaping (ApiProvider.Result) -> Void) {
+        if let error = error {
+            callbackHandler(.failure(error))
+        } else if let data = data {
+            callbackHandler(.success(data))
         }
-        task.resume()
     }
     
     private func buildURLLogin(userName: String, password: String) -> URLRequest {
@@ -72,6 +95,4 @@ class BankHttpProvider: ApiProvider {
         urlComponent.host = Api.baseURL
         return urlComponent
     }
-    
-
 }

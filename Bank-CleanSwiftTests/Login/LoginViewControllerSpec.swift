@@ -87,7 +87,7 @@ class LoginViewControllerSpec: QuickSpec {
             }
             
             it("should present an alert on presentEror") {
-                let viewModel = Login.ErrorViewModel(error: LoginError.apiError(message: "error"))
+                let viewModel = Login.ErrorViewModel(error: BankError.apiError(message: "error"))
                 sut.presentError(errorViewModel: viewModel)
                 expect(sut.presentedViewController).toEventually(beAKindOf(UIAlertController.self))
             }

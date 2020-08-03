@@ -14,28 +14,40 @@ import UIKit
 
 protocol StatementsBusinessLogic
 {
-  func doSomething(request: Statements.Something.Request)
+    func getStatments()
 }
 
 protocol StatementsDataStore
 {
-  var userAccount: UserAccount? { get set }
+    var userAccount: UserAccount? { get set }
 }
 
-class StatementsInteractor: StatementsBusinessLogic, StatementsDataStore
-{
-  var presenter: StatementsPresentationLogic?
-  var worker: StatementsWorker?
-  var userAccount: UserAccount?
+class StatementsInteractor: StatementsBusinessLogic, StatementsDataStore {
+    var presenter: StatementsPresentationLogic?
+    var worker: StatementsService?
+    var userAccount: UserAccount?
   
-  // MARK: Do something
-  
-  func doSomething(request: Statements.Something.Request)
-  {
-    worker = StatementsWorker()
-    worker?.doSomeWork()
+    init() {
+        let bankApiProvider = BankHttpProvider(urlSession: URLSession.shared)
+        worker = StatementsWorker(apiProvider: bankApiProvider)
+    }
     
-    let response = Statements.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    func getStatments() {
+        guard let userId = userAccount?.userId else { fatalError("expected to have user id") }
+        self.worker?.getStatements(userId: userId, callback: { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let statementsResult):
+                let response = Statements.ShowStatements.Response(statements: statementsResult)
+                DispatchQueue.main.async {
+                     self.presenter?.presetStatements(response: response)
+                }
+            case .failure(let error):
+                let errorResponse = Statements.Error.Reponse(error: error)
+                DispatchQueue.main.async {
+                    self.presenter?.presentError(errorResponse: errorResponse)
+                }
+            }
+        })
+    }
 }

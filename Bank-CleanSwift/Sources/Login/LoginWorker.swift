@@ -14,7 +14,7 @@ import UIKit
 
 protocol LoginService {
     
-    typealias Result = Swift.Result<UserAccount, LoginError>
+    typealias Result = Swift.Result<UserAccount, BankError>
     
     func login(userName: String, password: String, callback: @escaping (Result) -> Void)
     
@@ -40,7 +40,7 @@ class LoginWorker: LoginService {
             case .success(let data):
                 callback(self.map(data: data))
             case .failure(let error):
-                callback(.failure(LoginError.apiError(message: error.localizedDescription)))
+                callback(.failure(BankError.apiError(message: error.localizedDescription)))
             }
         }
     }
@@ -50,7 +50,7 @@ class LoginWorker: LoginService {
             let userAccount = try UserMapper.map(data)
             return .success(userAccount)
         } catch  {
-            return .failure(error as! LoginError)
+            return .failure(error as! BankError)
         }
     }
     

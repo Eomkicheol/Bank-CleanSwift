@@ -44,7 +44,7 @@ class LoginPresenterSpec: QuickSpec {
             }
             
             it("should call presentError correctly") {
-                let response = Login.ErrorResponse(error: LoginError.apiError(message: "error"))
+                let response = Login.ErrorResponse(error: BankError.apiError(message: "error"))
                 sut.presentError(errorResponse: response)
                 expect(displayLogic.errorViewModelReceived?.error).toEventually(equal(response.error))
             }

@@ -12,20 +12,24 @@
 
 import UIKit
 
-protocol StatementsPresentationLogic
-{
-  func presentSomething(response: Statements.Something.Response)
+protocol StatementsPresentationLogic{
+    
+    func presentError(errorResponse: Statements.Error.Reponse)
+    
+    func presetStatements(response: Statements.ShowStatements.Response)
 }
 
-class StatementsPresenter: StatementsPresentationLogic
-{
-  weak var viewController: StatementsDisplayLogic?
+class StatementsPresenter: StatementsPresentationLogic {
+    
+    weak var viewController: StatementsDisplayLogic?
   
-  // MARK: Do something
-  
-  func presentSomething(response: Statements.Something.Response)
-  {
-    let viewModel = Statements.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    func presentError(errorResponse: Statements.Error.Reponse) {
+        let viewModel = Statements.Error.ViewModel(error: errorResponse.error)
+        viewController?.displayError(viewModel: viewModel)
+    }
+    
+    func presetStatements(response: Statements.ShowStatements.Response) {
+        let viewModel = Statements.ShowStatements.ViewModel(statements: response.statements)
+        viewController?.displayStatements(viewModel: viewModel)
+    }
 }

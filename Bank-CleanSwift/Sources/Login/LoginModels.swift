@@ -26,7 +26,7 @@ enum Login
     }
     
     struct ErrorResponse {
-        let error: LoginError
+        let error: BankError
     }
     
     struct UserNameResponse {
@@ -42,6 +42,6 @@ enum Login
     }
     
     struct ErrorViewModel {
-        let error: LoginError
+        let error: BankError
     }
 }

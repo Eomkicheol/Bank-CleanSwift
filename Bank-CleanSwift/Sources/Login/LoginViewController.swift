@@ -25,9 +25,6 @@ private struct LoginViewControllerConstants {
     static let userTextFieldPlaceholder = "login.userTextField.placeholder"
     static let passwordTextFieldPlaceholder = "login.passwordTextField.placeholder"
     static let loginButtonLabel = "login.loginButton.text"
-    
-    static let errorAlertTitle = "login.alert.error.title"
-    static let errorAlertDismiss = "login.alert.error.dismissButton"
 }
 
 class LoginViewController: BaseViewController {
@@ -113,14 +110,12 @@ extension LoginViewController {
        
     }
 
-    private func buildAlert(error: LoginError) -> UIAlertController {
-        let alert = UIAlertController(title: LoginViewControllerConstants.errorAlertTitle.localized(), message: error.localizedDescription, preferredStyle: .alert)
-        let dismissAction = UIAlertAction(title: LoginViewControllerConstants.errorAlertDismiss.localized(), style: .cancel) { [weak self] (action) in
+    private func buildAlert(error: BankError) -> UIAlertController {
+        let dismissAction = UIAlertAction(title: self.alertDismissButtonTitle.localized(), style: .cancel) { [weak self] (action) in
             guard let self = self else { return }
             self.dismiss(animated: true, completion: nil)
         }
-        alert.addAction(dismissAction)
-        return alert
+        return self.buildAlert(error: error, actions: [dismissAction])
     }
     
 }

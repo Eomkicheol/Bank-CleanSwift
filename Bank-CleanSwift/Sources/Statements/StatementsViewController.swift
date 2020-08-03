@@ -14,19 +14,26 @@ import UIKit
 
 protocol StatementsDisplayLogic: class
 {
-  func displaySomething(viewModel: Statements.Something.ViewModel)
+    
+    func displayError(viewModel: Statements.Error.ViewModel)
+    
+    func displayStatements(viewModel: Statements.ShowStatements.ViewModel)
 }
 
-class StatementsViewController: UIViewController, StatementsDisplayLogic {
+class StatementsViewController: BaseViewController  {
     
     @IBOutlet private(set) weak var userNameLabel: UILabel!
     @IBOutlet private(set) weak var contaLabel: UILabel!
     @IBOutlet private(set) weak var contaValueLabel: UILabel!
     @IBOutlet private(set) weak var saldoLabel: UILabel!
     @IBOutlet private(set) weak var saldoValueLabel: UILabel!
+    @IBOutlet private(set) weak var tableView: UITableView!
     
     var interactor: StatementsBusinessLogic?
     var router: (NSObjectProtocol & StatementsRoutingLogic & StatementsDataPassing)?
+    
+    var statements = [Statement]()
+    private let statementCellIdentifier = "statementCell"
 
   // MARK: Object lifecycle
   
@@ -47,6 +54,8 @@ class StatementsViewController: UIViewController, StatementsDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUserHeader()
+        self.setupTableView()
+        self.getStatements()
         
     }
     
@@ -57,20 +66,42 @@ class StatementsViewController: UIViewController, StatementsDisplayLogic {
     @IBAction func logout(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    let request = Statements.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: Statements.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+ 
+}
+
+extension StatementsViewController: StatementsDisplayLogic {
+    
+    func displayStatements(viewModel: Statements.ShowStatements.ViewModel) {
+        self.statements = viewModel.statements
+        self.stopSpinner()
+        self.tableView.reloadData()
+    }
+    
+    
+    func displayError(viewModel: Statements.Error.ViewModel) {
+        let alert = self.buildAlert(error: viewModel.error)
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension StatementsViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: statementCellIdentifier) as? StatementTableCell else {
+            fatalError("Should have register statement cell")
+        }
+        cell.setup(self.statements[indexPath.row])
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.statements.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return StatementTableCellHeader()
+    }
 }
 
 // MARK: private
@@ -95,17 +126,33 @@ extension StatementsViewController {
         contaLabel.text = "statements.contaLabel".localized()
         contaValueLabel.text = "\(user.bankAccount ?? "") / \(user.agency ?? "")"
         saldoLabel.text = "statements.saldoLabel".localized()
-        saldoValueLabel.text = self.formatCurrency(value: user.balance ?? 0.0)
-        
+        saldoValueLabel.text = user.balance?.formatCurrency()
     }
     
-    private func formatCurrency(value: Double) -> String {
-        let currencyFormatter = NumberFormatter()
-//        currencyFormatter.usesGroupingSeparator = true
-        currencyFormatter.numberStyle = .currency
-        currencyFormatter.locale = Locale.current
-        let priceString = currencyFormatter.string(from: NSNumber(value: value))!
-        return priceString
+    private func setupTableView() {
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        let nib = UINib(nibName: "StatementTableCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: statementCellIdentifier)
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+    }
+    
+    private func buildAlert(error: BankError) -> UIAlertController {
+        let tryAgainAction = UIAlertAction(title: "statements.fetchAgain".localized(), style: .default) { [weak self] (action) in
+            guard let self = self else { return }
+            self.getStatements()
+        }
+        let dismissAction = UIAlertAction(title: self.alertDismissButtonTitle.localized(), style: .cancel) { [weak self] (action) in
+            guard let self = self else { return }
+            self.stopSpinner()
+            self.dismiss(animated: true, completion: nil)
+        }
+        return self.buildAlert(error: error, actions: [tryAgainAction, dismissAction])
+    }
+    
+    private func getStatements() {
+        self.showSpinner()
+        self.interactor?.getStatments()
     }
     
 }

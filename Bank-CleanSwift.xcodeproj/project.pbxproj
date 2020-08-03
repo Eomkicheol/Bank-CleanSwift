@@ -10,6 +10,12 @@
 		45F166BB805D5F075EE22AA5 /* Pods_Bank_CleanSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC73AD8B58172964FFC2D6F4 /* Pods_Bank_CleanSwift.framework */; };
 		5D9FE37547BD7263C7DDF760 /* Pods_Bank_CleanSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FADBF09F2D2469AA7C7990E /* Pods_Bank_CleanSwiftTests.framework */; };
 		7547DAE8D3ED139AE687D7A9 /* Pods_Bank_CleanSwift_Bank_CleanSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6F5499F6445CDFD82DE6F53 /* Pods_Bank_CleanSwift_Bank_CleanSwiftUITests.framework */; };
+		FF37D41424D758F9000ED009 /* StatementsMapperSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37D41324D758F8000ED009 /* StatementsMapperSpec.swift */; };
+		FF37D41624D75B2A000ED009 /* StatementsWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37D41524D75B2A000ED009 /* StatementsWorkerSpec.swift */; };
+		FF37D41A24D765EE000ED009 /* StatementTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37D41824D765EE000ED009 /* StatementTableCell.swift */; };
+		FF37D41B24D765EE000ED009 /* StatementTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF37D41924D765EE000ED009 /* StatementTableCell.xib */; };
+		FF37D41D24D76ADE000ED009 /* String+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37D41C24D76ADE000ED009 /* String+Formatter.swift */; };
+		FF37D41F24D76BD8000ED009 /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF37D41E24D76BD8000ED009 /* Double+Currency.swift */; };
 		FF3CDD6724D4FF1700C5F8D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3CDD6624D4FF1700C5F8D4 /* AppDelegate.swift */; };
 		FF3CDD7024D4FF1A00C5F8D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF3CDD6F24D4FF1A00C5F8D4 /* Assets.xcassets */; };
 		FF3CDD7324D4FF1A00C5F8D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3CDD7124D4FF1A00C5F8D4 /* LaunchScreen.storyboard */; };
@@ -30,14 +36,16 @@
 		FF72F91524D71FEA00EC4D9C /* StatementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF72F91424D71FEA00EC4D9C /* StatementsViewController.xib */; };
 		FF72F91724D7257000EC4D9C /* LoginRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72F91624D7257000EC4D9C /* LoginRouterSpec.swift */; };
 		FF72F91F24D7456E00EC4D9C /* StatementsViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72F91E24D7456E00EC4D9C /* StatementsViewControllerSpec.swift */; };
+		FF72F92124D7510600EC4D9C /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72F92024D7510600EC4D9C /* Statement.swift */; };
+		FF72F92324D7548200EC4D9C /* StatementsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72F92224D7548200EC4D9C /* StatementsMapper.swift */; };
 		FFAA494324D5BD7F006B7278 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFAA494524D5BD7F006B7278 /* Localizable.strings */; };
 		FFAA494924D5BE1D006B7278 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA494824D5BE1D006B7278 /* String+Localizable.swift */; };
 		FFAA494C24D5D033006B7278 /* LoginViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA494B24D5D033006B7278 /* LoginViewControllerSpec.swift */; };
 		FFAA494F24D5DC2B006B7278 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA494E24D5DC2B006B7278 /* UserAccount.swift */; };
 		FFAA495224D5DD05006B7278 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA495124D5DD05006B7278 /* ApiProvider.swift */; };
 		FFAA495824D5FE6A006B7278 /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA495724D5FE6A006B7278 /* UserMapper.swift */; };
-		FFAA495A24D5FEBA006B7278 /* BankError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA495924D5FEBA006B7278 /* BankError.swift */; };
-		FFAA495C24D6050B006B7278 /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA495B24D6050B006B7278 /* LoginError.swift */; };
+		FFAA495A24D5FEBA006B7278 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA495924D5FEBA006B7278 /* ErrorModel.swift */; };
+		FFAA495C24D6050B006B7278 /* BankError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA495B24D6050B006B7278 /* BankError.swift */; };
 		FFAA495F24D60AE6006B7278 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA495E24D60AE6006B7278 /* BaseViewController.swift */; };
 		FFAA496124D615E5006B7278 /* BankHttpProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA496024D615E5006B7278 /* BankHttpProvider.swift */; };
 		FFAA496324D63C3C006B7278 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAA496224D63C3C006B7278 /* SpinnerViewController.swift */; };
@@ -52,6 +60,11 @@
 		FFCFDC7F24D6F6CD0053A903 /* QuickSpec+Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCFDC7E24D6F6CD0053A903 /* QuickSpec+Stubs.swift */; };
 		FFCFDC8124D6F95E0053A903 /* LoginInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCFDC8024D6F95E0053A903 /* LoginInteractorSpec.swift */; };
 		FFCFDC8324D70BED0053A903 /* LoginPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCFDC8224D70BED0053A903 /* LoginPresenterSpec.swift */; };
+		FFECAC9824D77B9F0059F2A2 /* StatementTableCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECAC9724D77B9F0059F2A2 /* StatementTableCellHeader.swift */; };
+		FFECAC9A24D787DB0059F2A2 /* StatementsInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECAC9924D787DB0059F2A2 /* StatementsInteractorSpec.swift */; };
+		FFEE8A2B24D78DFA00D7ECBE /* StatementTableCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE8A2A24D78DFA00D7ECBE /* StatementTableCellSpec.swift */; };
+		FFEE8A2E24D791DB00D7ECBE /* StatementsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE8A2D24D791DB00D7ECBE /* StatementsServiceMock.swift */; };
+		FFEE8A3024D79D6700D7ECBE /* StatementsPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE8A2F24D79D6700D7ECBE /* StatementsPresenterSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +94,12 @@
 		EB51DEC2760D7B9A91C18A70 /* Pods-Bank-CleanSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank-CleanSwiftTests.release.xcconfig"; path = "Target Support Files/Pods-Bank-CleanSwiftTests/Pods-Bank-CleanSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		FC73AD8B58172964FFC2D6F4 /* Pods_Bank_CleanSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bank_CleanSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE06F0A8BD3ABFF5A899B19 /* Pods-Bank-CleanSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank-CleanSwift.release.xcconfig"; path = "Target Support Files/Pods-Bank-CleanSwift/Pods-Bank-CleanSwift.release.xcconfig"; sourceTree = "<group>"; };
+		FF37D41324D758F8000ED009 /* StatementsMapperSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsMapperSpec.swift; sourceTree = "<group>"; };
+		FF37D41524D75B2A000ED009 /* StatementsWorkerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsWorkerSpec.swift; sourceTree = "<group>"; };
+		FF37D41824D765EE000ED009 /* StatementTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementTableCell.swift; sourceTree = "<group>"; };
+		FF37D41924D765EE000ED009 /* StatementTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatementTableCell.xib; sourceTree = "<group>"; };
+		FF37D41C24D76ADE000ED009 /* String+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Formatter.swift"; sourceTree = "<group>"; };
+		FF37D41E24D76BD8000ED009 /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
 		FF3CDD6324D4FF1700C5F8D4 /* Bank-CleanSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bank-CleanSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3CDD6624D4FF1700C5F8D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF3CDD6F24D4FF1A00C5F8D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +126,8 @@
 		FF72F91424D71FEA00EC4D9C /* StatementsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatementsViewController.xib; sourceTree = "<group>"; };
 		FF72F91624D7257000EC4D9C /* LoginRouterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouterSpec.swift; sourceTree = "<group>"; };
 		FF72F91E24D7456E00EC4D9C /* StatementsViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsViewControllerSpec.swift; sourceTree = "<group>"; };
+		FF72F92024D7510600EC4D9C /* Statement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
+		FF72F92224D7548200EC4D9C /* StatementsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsMapper.swift; sourceTree = "<group>"; };
 		FFAA494424D5BD7F006B7278 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FFAA494624D5BD8C006B7278 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		FFAA494824D5BE1D006B7278 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
@@ -114,8 +135,8 @@
 		FFAA494E24D5DC2B006B7278 /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		FFAA495124D5DD05006B7278 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
 		FFAA495724D5FE6A006B7278 /* UserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
-		FFAA495924D5FEBA006B7278 /* BankError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankError.swift; sourceTree = "<group>"; };
-		FFAA495B24D6050B006B7278 /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
+		FFAA495924D5FEBA006B7278 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		FFAA495B24D6050B006B7278 /* BankError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankError.swift; sourceTree = "<group>"; };
 		FFAA495E24D60AE6006B7278 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FFAA496024D615E5006B7278 /* BankHttpProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankHttpProvider.swift; sourceTree = "<group>"; };
 		FFAA496224D63C3C006B7278 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +151,11 @@
 		FFCFDC7E24D6F6CD0053A903 /* QuickSpec+Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuickSpec+Stubs.swift"; sourceTree = "<group>"; };
 		FFCFDC8024D6F95E0053A903 /* LoginInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorSpec.swift; sourceTree = "<group>"; };
 		FFCFDC8224D70BED0053A903 /* LoginPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterSpec.swift; sourceTree = "<group>"; };
+		FFECAC9724D77B9F0059F2A2 /* StatementTableCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementTableCellHeader.swift; sourceTree = "<group>"; };
+		FFECAC9924D787DB0059F2A2 /* StatementsInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsInteractorSpec.swift; sourceTree = "<group>"; };
+		FFEE8A2A24D78DFA00D7ECBE /* StatementTableCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementTableCellSpec.swift; sourceTree = "<group>"; };
+		FFEE8A2D24D791DB00D7ECBE /* StatementsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsServiceMock.swift; sourceTree = "<group>"; };
+		FFEE8A2F24D79D6700D7ECBE /* StatementsPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementsPresenterSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +209,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FF37D41724D765CD000ED009 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				FF37D41824D765EE000ED009 /* StatementTableCell.swift */,
+				FF37D41924D765EE000ED009 /* StatementTableCell.xib */,
+				FFECAC9724D77B9F0059F2A2 /* StatementTableCellHeader.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
 		FF3CDD5A24D4FF1700C5F8D4 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +253,7 @@
 		FF3CDD7C24D4FF1A00C5F8D4 /* Bank-CleanSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				FFEE8A2C24D791C800D7ECBE /* Mock */,
 				FFAA496C24D645E1006B7278 /* Stub */,
 				FFAA496424D63EB5006B7278 /* Component */,
 				FFAA496924D64305006B7278 /* Mapper */,
@@ -272,7 +309,6 @@
 				FF3CDD9C24D5104000C5F8D4 /* LoginModels.swift */,
 				FF3CDD9E24D5104000C5F8D4 /* LoginInteractor.swift */,
 				FF3CDD9D24D5104000C5F8D4 /* LoginViewController.swift */,
-				FFAA495B24D6050B006B7278 /* LoginError.swift */,
 				FF3CDDA524D5108C00C5F8D4 /* LoginViewController.xib */,
 			);
 			path = Login;
@@ -281,12 +317,13 @@
 		FF72F90724D71E3E00EC4D9C /* Statements */ = {
 			isa = PBXGroup;
 			children = (
+				FF37D41724D765CD000ED009 /* Table */,
 				FF72F90824D71FA300EC4D9C /* StatementsPresenter.swift */,
 				FF72F90924D71FA300EC4D9C /* StatementsWorker.swift */,
 				FF72F90A24D71FA300EC4D9C /* StatementsRouter.swift */,
 				FF72F90B24D71FA300EC4D9C /* StatementsModels.swift */,
-				FF72F90C24D71FA300EC4D9C /* StatementsViewController.swift */,
 				FF72F90D24D71FA300EC4D9C /* StatementsInteractor.swift */,
+				FF72F90C24D71FA300EC4D9C /* StatementsViewController.swift */,
 				FF72F91424D71FEA00EC4D9C /* StatementsViewController.xib */,
 			);
 			path = Statements;
@@ -295,7 +332,11 @@
 		FF72F91D24D7453F00EC4D9C /* Statements */ = {
 			isa = PBXGroup;
 			children = (
+				FFEE8A2924D78DD900D7ECBE /* Table */,
 				FF72F91E24D7456E00EC4D9C /* StatementsViewControllerSpec.swift */,
+				FF37D41524D75B2A000ED009 /* StatementsWorkerSpec.swift */,
+				FFECAC9924D787DB0059F2A2 /* StatementsInteractorSpec.swift */,
+				FFEE8A2F24D79D6700D7ECBE /* StatementsPresenterSpec.swift */,
 			);
 			path = Statements;
 			sourceTree = "<group>";
@@ -304,6 +345,8 @@
 			isa = PBXGroup;
 			children = (
 				FFAA494824D5BE1D006B7278 /* String+Localizable.swift */,
+				FF37D41C24D76ADE000ED009 /* String+Formatter.swift */,
+				FF37D41E24D76BD8000ED009 /* Double+Currency.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -324,7 +367,9 @@
 			isa = PBXGroup;
 			children = (
 				FFAA494E24D5DC2B006B7278 /* UserAccount.swift */,
-				FFAA495924D5FEBA006B7278 /* BankError.swift */,
+				FFAA495924D5FEBA006B7278 /* ErrorModel.swift */,
+				FF72F92024D7510600EC4D9C /* Statement.swift */,
+				FFAA495B24D6050B006B7278 /* BankError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				FFAA495724D5FE6A006B7278 /* UserMapper.swift */,
+				FF72F92224D7548200EC4D9C /* StatementsMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -369,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				FFAA496A24D64313006B7278 /* UserMapperSpec.swift */,
+				FF37D41324D758F8000ED009 /* StatementsMapperSpec.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -389,6 +436,22 @@
 				FFAA497424D667EC006B7278 /* UserProviderImplSpec.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		FFEE8A2924D78DD900D7ECBE /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				FFEE8A2A24D78DFA00D7ECBE /* StatementTableCellSpec.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		FFEE8A2C24D791C800D7ECBE /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				FFEE8A2D24D791DB00D7ECBE /* StatementsServiceMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -502,6 +565,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF37D41B24D765EE000ED009 /* StatementTableCell.xib in Resources */,
 				FF3CDDA624D5108C00C5F8D4 /* LoginViewController.xib in Resources */,
 				FF72F91524D71FEA00EC4D9C /* StatementsViewController.xib in Resources */,
 				FFAA494324D5BD7F006B7278 /* Localizable.strings in Resources */,
@@ -654,19 +718,25 @@
 				FFAA494924D5BE1D006B7278 /* String+Localizable.swift in Sources */,
 				FFAA497324D66667006B7278 /* UserProvider.swift in Sources */,
 				FF3CDDA324D5104000C5F8D4 /* LoginViewController.swift in Sources */,
-				FFAA495C24D6050B006B7278 /* LoginError.swift in Sources */,
+				FFAA495C24D6050B006B7278 /* BankError.swift in Sources */,
 				FF3CDD9F24D5104000C5F8D4 /* LoginPresenter.swift in Sources */,
+				FF37D41F24D76BD8000ED009 /* Double+Currency.swift in Sources */,
 				FFAA495F24D60AE6006B7278 /* BaseViewController.swift in Sources */,
 				FF72F91124D71FA300EC4D9C /* StatementsModels.swift in Sources */,
 				FFAA495224D5DD05006B7278 /* ApiProvider.swift in Sources */,
 				FFAA494F24D5DC2B006B7278 /* UserAccount.swift in Sources */,
-				FFAA495A24D5FEBA006B7278 /* BankError.swift in Sources */,
+				FFAA495A24D5FEBA006B7278 /* ErrorModel.swift in Sources */,
 				FFAA496124D615E5006B7278 /* BankHttpProvider.swift in Sources */,
 				FFAA495824D5FE6A006B7278 /* UserMapper.swift in Sources */,
 				FF72F90F24D71FA300EC4D9C /* StatementsWorker.swift in Sources */,
+				FF72F92324D7548200EC4D9C /* StatementsMapper.swift in Sources */,
+				FF37D41A24D765EE000ED009 /* StatementTableCell.swift in Sources */,
 				FF3CDD6724D4FF1700C5F8D4 /* AppDelegate.swift in Sources */,
 				FF3CDDA424D5104000C5F8D4 /* LoginInteractor.swift in Sources */,
+				FF72F92124D7510600EC4D9C /* Statement.swift in Sources */,
 				FF3CDDA224D5104000C5F8D4 /* LoginModels.swift in Sources */,
+				FF37D41D24D76ADE000ED009 /* String+Formatter.swift in Sources */,
+				FFECAC9824D77B9F0059F2A2 /* StatementTableCellHeader.swift in Sources */,
 				FF72F90E24D71FA300EC4D9C /* StatementsPresenter.swift in Sources */,
 				FF3CDDA124D5104000C5F8D4 /* LoginRouter.swift in Sources */,
 				FFAA496324D63C3C006B7278 /* SpinnerViewController.swift in Sources */,
@@ -683,12 +753,18 @@
 			files = (
 				FFCFDC7F24D6F6CD0053A903 /* QuickSpec+Stubs.swift in Sources */,
 				FFAA496824D64189006B7278 /* BaseViewControllerSpec.swift in Sources */,
+				FF37D41624D75B2A000ED009 /* StatementsWorkerSpec.swift in Sources */,
 				FF72F91F24D7456E00EC4D9C /* StatementsViewControllerSpec.swift in Sources */,
+				FF37D41424D758F9000ED009 /* StatementsMapperSpec.swift in Sources */,
 				FFAA496E24D645FF006B7278 /* URLProtocolStub.swift in Sources */,
 				FFAA497124D6468C006B7278 /* BankHttpProviderSpec.swift in Sources */,
 				FFCFDC8124D6F95E0053A903 /* LoginInteractorSpec.swift in Sources */,
+				FFECAC9A24D787DB0059F2A2 /* StatementsInteractorSpec.swift in Sources */,
 				FFAA496B24D64313006B7278 /* UserMapperSpec.swift in Sources */,
+				FFEE8A3024D79D6700D7ECBE /* StatementsPresenterSpec.swift in Sources */,
 				FFCFDC7D24D6F5260053A903 /* LoginWorkerSpec.swift in Sources */,
+				FFEE8A2E24D791DB00D7ECBE /* StatementsServiceMock.swift in Sources */,
+				FFEE8A2B24D78DFA00D7ECBE /* StatementTableCellSpec.swift in Sources */,
 				FFCFDC8324D70BED0053A903 /* LoginPresenterSpec.swift in Sources */,
 				FFAA497524D667EC006B7278 /* UserProviderImplSpec.swift in Sources */,
 				FF72F91724D7257000EC4D9C /* LoginRouterSpec.swift in Sources */,

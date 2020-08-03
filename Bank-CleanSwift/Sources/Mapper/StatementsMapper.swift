@@ -1,33 +1,33 @@
 //
-//  UserMapper.swift
+//  StatementsMapper.swift
 //  Bank-CleanSwift
 //
-//  Created by Scott Takahashi on 01/08/20.
+//  Created by Scott Takahashi on 02/08/20.
 //  Copyright © 2020 Scott Takahashi. All rights reserved.
 //
 
 import Foundation
 
-class UserMapper {
+class StatementsMapper {
     
     private struct Root: Codable {
-        let userAccount: UserAccount
+        let statementList: [Statement]
         let error: ErrorModel
     }
     
-    private static let invalidData = "login.error.invalidData"
+    private static let invalidData = "error.invalidData"
     
-    static func map(_ data: Data) throws -> UserAccount {
+    static func map(_ data: Data) throws -> [Statement] {
         guard let root = try? JSONDecoder().decode(Root.self, from: data) else {
             throw BankError.apiError(message: invalidData)
         }
 
-        if let _ = root.userAccount.userId {
-            return root.userAccount
+        if !root.statementList.isEmpty {
+            return root.statementList
         } else if let error = root.error.message {
             throw BankError.apiError(message: error)
         }
-        throw BankError.apiError(message: invalidData)
+        return []
     }
-
+    
 }

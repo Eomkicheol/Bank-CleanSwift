@@ -15,4 +15,5 @@ protocol ApiProvider {
     
     func login(userName: String, password: String, callbackHandler: @escaping (Result) -> Void)
 
+    func fetchStatements(userId: Int, callbackHandler: @escaping (Result) -> Void)
 }
